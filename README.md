@@ -22,3 +22,7 @@ A Chrome theme in the DMG Mode pea-green palette (`#0f380f` `#306230` `#8bac0f` 
 ## New Tab image
 
 `tools/dmgify.py <source.png> <out.png> <pixel-size>` snaps a render to the 4 shades (background and outlines darkest, then shadows, body, highlights). The current image is pixel size 3.
+
+## Credits
+
+The New Tab image (`theme/images/ntp-background.png`) is a render of [Nintendo Game Boy 1989 - High Poly Model](https://sketchfab.com/3d-models/nintendo-game-boy-1989-high-poly-model-300c418fb222409abe354926eaa208b2) by [lion.gelders](https://sketchfab.com/lion.gelders), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: rendered to a still image, then pixelated and reduced to the 4-shade DMG palette with `tools/dmgify.py`.
