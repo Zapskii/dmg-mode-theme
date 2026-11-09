@@ -2,6 +2,8 @@
 
 A Chrome theme in the DMG Mode pea-green palette (`#0f380f` `#306230` `#8bac0f` `#9bbc0f`). Companion to the [DMG Mode extension](https://github.com/Zapskii/dmg-mode).
 
+![DMG Mode Theme on the Chrome New Tab page](store/screenshot-1280x800.png)
+
 | Part | Shade |
 |---|---|
 | Window frame, background tabs | `#306230` (`#0f380f` when unfocused or incognito) |
