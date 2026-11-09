@@ -1,0 +1,51 @@
+{
+  "theme": {
+    "images": {
+      "theme_frame": "images/frame-corner.png"
+    },
+    "colors": {
+      "frame": "#306230",
+      "frame_inactive": "#0f380f",
+      "tab_background_text": "#9bbc0f",
+      "tab_selected": "#8bac0f",
+      "tab_text": "#0f380f",
+      "tab_line": "#0f380f",
+      "tab_loading": "#0f380f",
+      "toolbar": "#8bac0f",
+      "toolbar_text": "#0f380f",
+      "icons": "#0f380f",
+      "icons_attention": "#306230",
+      "toolbar_top_separator": "#306230",
+      "toolbar_bottom_separator": "#306230",
+      "toolbar_vertical_separator": "#306230",
+      "toolbar_field": "#9bbc0f",
+      "toolbar_field_text": "#0f380f",
+      "toolbar_field_border": "#8bac0f",
+      "toolbar_field_focus": "#9bbc0f",
+      "toolbar_field_text_focus": "#0f380f",
+      "toolbar_field_border_focus": "#0f380f",
+      "toolbar_field_highlight": "#306230",
+      "toolbar_field_highlight_text": "#9bbc0f",
+      "button_background_hover": "rgba(15, 56, 15, 0.15)",
+      "button_background_active": "rgba(15, 56, 15, 0.3)",
+      "popup": "#9bbc0f",
+      "popup_text": "#0f380f",
+      "popup_border": "#306230",
+      "popup_highlight": "#8bac0f",
+      "popup_highlight_text": "#0f380f",
+      "sidebar": "#9bbc0f",
+      "sidebar_text": "#0f380f",
+      "sidebar_border": "#306230",
+      "sidebar_highlight": "#306230",
+      "sidebar_highlight_text": "#9bbc0f",
+      "ntp_background": "#0f380f",
+      "ntp_text": "#9bbc0f"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dmg-mode-theme@zapski",
+      "strict_min_version": "128.0"
+    }
+  }
+}

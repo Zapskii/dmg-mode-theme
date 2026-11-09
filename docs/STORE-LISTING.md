@@ -56,8 +56,23 @@ None: a theme declares no permissions and runs no code.
 - **Remote code:** No. A theme contains only a manifest and images.
 - **Data use certification:** none of the listed data types are collected, sold or transferred.
 
+## Firefox (addons.mozilla.org)
+
+Upload `dist/dmg-mode-theme-firefox-<version>.zip` as a **theme**. The add-on ID is
+`dmg-mode-theme@zapski`; it can't change after the first upload. Use the same name,
+summary and credit as above, but change the New Tab bullet, because Firefox shows the
+Game Boy in the top-right corner of the tab strip rather than on the New Tab page:
+
+```
+• A pixel-art Game Boy in the corner of the tab strip
+```
+
+Screenshots must be taken in Firefox. A theme has no code, so there's no source upload
+and nothing to justify to the reviewer.
+
 ## Pre-submission checklist
 
 - [ ] `theme/manifest.json` version bumped if re-uploading
 - [ ] `./build.sh`, then load `theme/` unpacked once and check the New Tab page
 - [ ] Upload the zip, screenshot and promo tile; paste the text above
+- [ ] `npx addons-linter dist/dmg-mode-theme-firefox-<version>.zip` is clean before the AMO upload
