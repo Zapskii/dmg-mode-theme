@@ -2,7 +2,9 @@
 
   dmgify.py SRC OUT BLOCK              opaque image, background in the darkest shade
   dmgify.py SRC OUT BLOCK --frame H    Firefox header image: console only, H-4 px tall,
-                                       transparent, 16 px from the right edge. Shades are
+                                       transparent, RIGHT px from the right edge (clear of
+                                       Firefox's tab-strip buttons). OUT may be .svg, which
+                                       stays sharp on high-DPI screens. Shades are
                                        worked out at BLOCK x the size, then sampled down,
                                        which keeps outlines thin at small sizes
 """
@@ -15,6 +17,7 @@ PAL = np.array([(15,56,15),(48,98,48),(139,172,15),(155,188,15)], np.uint8)
 p = argparse.ArgumentParser()
 p.add_argument('src'); p.add_argument('out'); p.add_argument('block', type=int)
 p.add_argument('--frame', type=int, metavar='H')
+p.add_argument('--right', type=int, default=100, help='frame mode: gap to the right edge')
 args = p.parse_args()
 
 g = Image.open(args.src).convert('L')
@@ -44,7 +47,24 @@ rgb = PAL[lv[::b, ::b]].repeat(b, 0).repeat(b, 1)[:a.shape[0], :a.shape[1]]
 if args.frame:
     alpha = (mask[::b, ::b] * 255).astype(np.uint8)
     art = Image.fromarray(np.dstack([PAL[lv[::b, ::b]], alpha]))
-    out = Image.new('RGBA', (art.width + 16, args.frame), (0, 0, 0, 0))
+    if args.out.endswith('.svg'):                               # one <rect> per run of same-colour pixels
+        hexes = ['#%02x%02x%02x' % tuple(c) for c in PAL]
+        ids, on = lv[::b, ::b], alpha > 0
+        rects = []
+        for y in range(ids.shape[0]):
+            x = 0
+            while x < ids.shape[1]:
+                if not on[y, x]: x += 1; continue
+                x0 = x
+                while x < ids.shape[1] and on[y, x] and ids[y, x] == ids[y, x0]: x += 1
+                rects.append(f'<rect x="{x0}" y="{y + 2}" width="{x - x0}" height="1" fill="{hexes[ids[y, x0]]}"/>')
+        w = ids.shape[1] + args.right
+        with open(args.out, 'w') as f:
+            f.write(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{args.frame}" '
+                    f'viewBox="0 0 {w} {args.frame}" shape-rendering="crispEdges">' + ''.join(rects) + '</svg>\n')
+        print(args.out, (w, args.frame), len(rects), 'rects')
+        raise SystemExit
+    out = Image.new('RGBA', (art.width + args.right, args.frame), (0, 0, 0, 0))
     out.paste(art, (0, 2))
     out.save(args.out)
 else:

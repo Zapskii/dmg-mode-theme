@@ -2,6 +2,8 @@
 
 A Chrome and Firefox theme in the DMG Mode pea-green palette (`#0f380f` `#306230` `#8bac0f` `#9bbc0f`). Companion to the [DMG Mode extension](https://github.com/Zapskii/dmg-mode).
 
+**[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/kploegjkohempkkcdbihmnndllhhanlk)**
+
 ![DMG Mode Theme on the Chrome New Tab page](store/screenshot-1280x800.png)
 
 | Part | Shade |
@@ -10,7 +12,7 @@ A Chrome and Firefox theme in the DMG Mode pea-green palette (`#0f380f` `#306230
 | Active tab, toolbar | `#8bac0f` |
 | Address bar | `#9bbc0f` |
 | New Tab page | `#0f380f`; Chrome adds a pixelated Game Boy in the centre (`theme/images/ntp-background.png`) |
-| Tab strip, top right (Firefox) | a small pixelated Game Boy (`theme/images/frame-corner.png`) |
+| Tab strip, top right (Firefox) | a small pixelated Game Boy (`theme/images/frame-corner.svg`) |
 | Text and icons | `#0f380f` |
 
 Firefox themes can't put an image on the New Tab page, so the Firefox version shows its Game Boy in the corner of the tab strip instead.
@@ -36,9 +38,11 @@ Each zip leaves out the other browser's image. Check the Firefox one with `npx a
 
 ```
 python3 tools/dmgify.py art/gameboy-render.png theme/images/ntp-background.png 3
-python3 tools/dmgify.py art/gameboy-render.png theme/images/frame-corner.png 4 --frame 44
+python3 tools/dmgify.py art/gameboy-render.png theme/images/frame-corner.svg 4 --frame 44
 ```
+
+The Firefox image is an SVG of pixel squares, so it stays sharp on Retina screens. It sits 100px in from the right edge (`--right`), clear of Firefox's tab-search button.
 
 ## Credits
 
-The source render (`art/gameboy-render.png`) and the images made from it (`theme/images/ntp-background.png`, `theme/images/frame-corner.png`, and the console in `store/`) come from [Nintendo Game Boy 1989 - High Poly Model](https://sketchfab.com/3d-models/nintendo-game-boy-1989-high-poly-model-300c418fb222409abe354926eaa208b2) by [lion.gelders](https://sketchfab.com/lion.gelders), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: rendered to a still image, then pixelated and reduced to the 4-shade DMG palette with `tools/dmgify.py`.
+The source render (`art/gameboy-render.png`) and the images made from it (`theme/images/ntp-background.png`, `theme/images/frame-corner.svg`, and the console in `store/`) come from [Nintendo Game Boy 1989 - High Poly Model](https://sketchfab.com/3d-models/nintendo-game-boy-1989-high-poly-model-300c418fb222409abe354926eaa208b2) by [lion.gelders](https://sketchfab.com/lion.gelders), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (Attribution only: commercial use and changes allowed). Changes: rendered to a still image, then pixelated and reduced to the 4-shade DMG palette with `tools/dmgify.py`.

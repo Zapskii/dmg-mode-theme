@@ -9,7 +9,7 @@ ffout="dist/dmg-mode-theme-firefox-$version.zip"
 mkdir -p dist && rm -f "$out" "$ffout"
 
 # Chrome: everything except the Firefox-only header image.
-(cd theme && zip -r -X -q "../$out" . -x '*.DS_Store' -x 'Cached Theme.pak' -x 'images/frame-corner.png')
+(cd theme && zip -r -X -q "../$out" . -x '*.DS_Store' -x 'Cached Theme.pak' -x 'images/frame-corner.svg')
 echo "Built $out"
 
 # Firefox: merged manifest; Firefox themes can't show a New Tab image, so leave it out.
