@@ -2,7 +2,9 @@
 
 A Chrome and Firefox theme in the DMG Mode pea-green palette (`#0f380f` `#306230` `#8bac0f` `#9bbc0f`). Companion to the [DMG Mode extension](https://github.com/Zapskii/dmg-mode).
 
-**[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/kploegjkohempkkcdbihmnndllhhanlk)**
+**[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/kploegjkohempkkcdbihmnndllhhanlk)** · **[Install from Firefox Add-ons](https://addons.mozilla.org/addon/dmg-mode-theme)**
+
+Firefox themes can't put an image on the New Tab page, so the Firefox version shows its Game Boy in the corner of the tab strip instead.
 
 ![DMG Mode Theme on the Chrome New Tab page](store/screenshot-1280x800.png)
 
@@ -14,8 +16,6 @@ A Chrome and Firefox theme in the DMG Mode pea-green palette (`#0f380f` `#306230
 | New Tab page | `#0f380f`; Chrome adds a pixelated Game Boy in the centre (`theme/images/ntp-background.png`) |
 | Tab strip, top right (Firefox) | a small pixelated Game Boy (`theme/images/frame-corner.svg`) |
 | Text and icons | `#0f380f` |
-
-Firefox themes can't put an image on the New Tab page, so the Firefox version shows its Game Boy in the corner of the tab strip instead.
 
 ## Install (development)
 
